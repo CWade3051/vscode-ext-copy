@@ -2,6 +2,19 @@
 
 A set of scripts to manage and synchronize VS Code extensions across different installations including VS Code, VS Code Insiders, Cursor, and Windsurf.
 
+## At a Glance (TL;DR)
+
+If you just want the minimal flow, read `TLDR.md` or skim this:
+
+1. Run `./sync-code-extensions.sh`
+2. Pick Source editor → pick Destination editor
+3. Script downloads only extensions missing from Destination (latest versions)
+4. Optionally change which editor the `code` command points to
+5. Optionally install the downloaded extensions into Destination
+6. Optionally delete the downloaded `.vsix` folder
+
+Full high‑level behavior and rationale: see `outline.md`.
+
 ## Quick Start
 
 ### Prerequisites
@@ -43,6 +56,8 @@ The script works by:
 4. Comparing with extensions in the destination editor
 5. Downloading missing extensions as VSIX files
 6. Optionally installing them to the destination editor
+
+For an exact, expanded execution sequence (including decision points and special cases) consult `outline.md`.
 
 ### Directory Structure
 
